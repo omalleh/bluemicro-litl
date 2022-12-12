@@ -23,40 +23,26 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 
 /* HARDWARE DEFINITION*/
 /* key matrix size */
-#define MATRIX_ROWS 4
-#define MATRIX_COLS 12
+#define MATRIX_ROWS 8
+#define MATRIX_COLS 6
 
-#define MATRIX_ROW_PINS {3, 14, 13, 11}
-#define MATRIX_COL_PINS {5, 4, 16, 15, 30, 29, 28, 27, 26, 25, 7, 18} 
-
+#define MATRIX_ROW_PINS {36, 38, 22, 24, 32, 11, 29, 31 }
+#define MATRIX_COL_PINS {2, 47, 45, 43, 10, 9 }
 #define UNUSED_PINS {}
 
 /* COL2ROW or ROW2COL */
-#define DIODE_DIRECTION COL2ROW
-        #define BATTERY_TYPE BATT_LIPO
-        #define VBAT_PIN  31
+#define DIODE_DIRECTION ROW2COL
+#define BATTERY_TYPE BATT_LIPO
+#define VBAT_PIN  4
 
-        #define  STATUS_BLE_LED_PIN  19  //blue = 0.19
-#define  STATUS_KB_LED_PIN 17  //red = 0.17
-  /*      #define D3      18  // NOTE on board serial
-        #define D2      7   // NOTE on board serial
-        #define D1      25  //sda
-        #define D0      26  //scl
-        #define D4      27
-        #define C6      28
-        #define D7      29
-        #define E6      30
-        #define B4      15
-        #define B5      16
+#define VCC_PIN 13
+#define VCC_POLARITY_ON 1
 
-        #define F4      5
-        #define F5      4
-        #define F6      3
-        #define F7      2
-        #define B1      12  //sck
-        #define B3      14  //miso
-        #define B2      13  //mosi
-        #define B6      11
-        #define NC      24 */
+#define STATUS_BLE_LED_PIN  15  
+#define BLE_LED_ACTIVE 1
+
+#define ENCODER_A_PIN  6 
+#define ENCODER_B_PIN  8
+#define ENCODER_RESOLUTION 2  
     
 #endif /* HARDWARE_CONFIG_H */
