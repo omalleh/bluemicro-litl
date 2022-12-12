@@ -48,7 +48,7 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
     { K20, K22, K24, K26, K28, K2A, }, \
     { K21, K23, K25, K27, K29, K2B, }, \
     { K30, K32, K34, K36, K38, K3A, }, \
-    { K31, _x_, K35, K37, K39, K3B, }  \
+    { K31,      K35, K37, K39, K3B, }  \
 } 
 
 
