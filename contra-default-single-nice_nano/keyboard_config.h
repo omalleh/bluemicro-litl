@@ -21,30 +21,35 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 #define KEYBOARD_CONFIG_H
 #include "hardware_config.h"
 
+
 #define KEYBOARD_SIDE SINGLE
+// CHANGE THIS FOR THE KEYBOARD TO MATCH WHAT IS BEING FLASHED. OPTIONS: LEFT  RIGHT  SINGLE
 
+#define DEVICE_NAME_R                         "Litl_R"                          /**< Name of device. Will be included in the advertising data. */
+#define DEVICE_NAME_L                        "Litl_L"                          /**< Name of device. Will be included in the advertising data. */
+#define DEVICE_NAME_M                         "Litl"                          /**< Name of device. Will be included in the advertising data. */
 
-#define DEVICE_NAME_R                         "4x12_R"                         /**< Name of device. Will be included in the advertising data. */
-#define DEVICE_NAME_L                         "4x12_L"                         /**< Name of device. Will be included in the advertising data. */
-#define DEVICE_NAME_M                         "4x12"                           /**< Name of device. Will be included in the advertising data. */
+#define DEVICE_MODEL                        "Litl_V2"                          /**< Name of device. Will be included in the advertising data. */
 
-#define DEVICE_MODEL                        "4x12_V1"                          /**< Name of device. Will be included in the advertising data. */
-
-#define MANUFACTURER_NAME                   "keyboards.jpconstantineau.com"            /**< Manufacturer. Will be passed to Device Information Service. */
+#define MANUFACTURER_NAME                   "https://sthlmkb.com/"                      /**< Manufacturer. Will be passed to Device Information Service. */
 
 
 #define KEYMAP( \
-	 K00,   K01,   K02,   K03,  K04,   K05,   K06,   K07,  K08,   K09,   K010,   K011,     \
-	 K10,   K11,   K12,   K13,  K14,   K15,   K16,   K17,  K18,   K19,   K110,   K111,    \
-	 K20,   K21,   K22,   K23,  K24,   K25,   K26,   K27,  K28,   K29,   K210,   K211,   \
-	 K30,   K31,   K32,   K33,  K34,   K35,   K36,   K37,  K38,   K39,   K310,   K311 \
-) { \
-	{ K00,   K01,   K02,   K03, K04,   K05,   K06,   K07,  K08,   K09,   K010,   K011,  }, \
-	{ K10,   K11,   K12,   K13, K14,   K15,   K16,   K17,  K18,   K19,   K110,   K111,  }, \
-	{ K20,   K21,   K22,   K23, K24,   K25,   K26,   K27,  K28,   K29,   K210,   K211,  }, \
-	{ K30,   K31,   K32,   K33, K34,   K35,   K36,   K37,  K38,   K39,   K310,   K311  } \
-}
-
+      K00, K01, K02, K03, K04, K05, K06, K07, K08, K09, K0A, K0B, \
+      K10, K11, K12, K13, K14, K15, K16, K17, K18, K19, K1A, K1B, \
+      K20, K21, K22, K23, K24, K25, K26, K27, K28, K29, K2A, K2B, \
+      K30, K31, K32,      K34, K35, K36, K37, K38, K39, K3A, K3B  \
+) \
+{ \
+    { K00, K02, K04, K06, K08, K0A, }, \
+    { K01, K03, K05, K07, K09, K0B, }, \
+    { K10, K12, K14, K16, K18, K1A, }, \
+    { K11, K13, K15, K17, K19, K1B, }, \
+    { K20, K22, K24, K26, K28, K2A, }, \
+    { K21, K23, K25, K27, K29, K2B, }, \
+    { K30, K32, K34, K36, K38, K3A, }, \
+    { K31, _x_, K35, K37, K39, K3B, }  \
+} 
 
 
 #endif /* KEYBOARD_CONFIG_H */
