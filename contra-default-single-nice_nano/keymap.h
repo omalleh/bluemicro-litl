@@ -31,12 +31,12 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 
 #define _L0  0
 #define _L1  1
-#define _L2  2
-#define _L3  3
+//#define _L2  2
+//#define _L3  3
 
 void setupKeymap();
 void encoder_callback(int step);
-extern std::array<std::array<Key, MATRIX_COLS>, MATRIX_ROWS> matrix;
+extern std::array<std::array<Key, MATRIX_ROWS>, MATRIX_COLS> matrix;
 extern DynamicState keyboardstate;
 
 #endif /* KEYMAP_H */
