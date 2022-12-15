@@ -38,7 +38,7 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
   A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, \
   B1, B2, B3, B4, B5, B6, B7, B8, B9, B10, B11, B12, \
   C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, \
-  D1, D2, D3,      D34, D35, D36, D37, D38, D39, D3A, D3B  \
+  D1, D2, D3,     D5, D6, D7, D8, D9, D10, D11, D12  \
 ) { \
     { A1, A3,    A5, A7, A9,  A11, }, \
     { A2, A4,    A6, A8, A10, A12, }, \
