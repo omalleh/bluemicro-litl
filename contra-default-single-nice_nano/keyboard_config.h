@@ -35,19 +35,19 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 
 
 #define KEYMAP( \
-  K00, K01, K02, K03, K04, K05, K06, K07, K08, K09, K0A, K0B, \
-  K10, K11, K12, K13, K14, K15, K16, K17, K18, K19, K1A, K1B, \
-  K20, K21, K22, K23, K24, K25, K26, K27, K28, K29, K2A, K2B, \
-  K30, K31, K32,      K34, K35, K36, K37, K38, K39, K3A, K3B  \
+  A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, \
+  B1, B2, B3, B4, B5, B6, B7, B8, B9, B10, B11, B12, \
+  C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, \
+  D1, D2, D3,      D34, D35, D36, D37, D38, D39, D3A, D3B  \
 ) { \
-{ K00, K02, K04, K06, K08, K0A, }, \
-{ K01, K03, K05, K07, K09, K0B, }, \
-{ K10, K12, K14, K16, K18, K1A, }, \
-{ K11, K13, K15, K17, K19, K1B, }, \
-{ K20, K22, K24, K26, K28, K2A, }, \
-{ K21, K23, K25, K27, K29, K2B, }, \
-{ K30, K32, K34, K36, K38, K3A, }, \
-{ K31, KC_NO, K35, K37, K39, K3B }  \
+    { A1, A3,    A5, A7, A9,  A11, }, \
+    { A2, A4,    A6, A8, A10, A12, }, \
+    { B1, B3,    B5, B7, B9,  B11, }, \
+    { B2, B4,    B6, B8, B10, B12, }, \
+    { C1, C3,    C5, C7, C9,  C11, }, \
+    { C2, C4,    C6, C8, C10, C12, }, \
+    { D1, D3,    D5, D7, D9,  D11, }, \
+    { D2, KC_NO, D6, D8, D10, D12 }  \
 }
 
 
