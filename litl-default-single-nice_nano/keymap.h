@@ -57,14 +57,8 @@ void updateDisplay(PersistentState* cfg, DynamicState* stat)
     switch(stat->layer)
     {
         case _QWERTY:     u8g2.drawStr(0,128,""); break;
-        case _LOWER:      u8g2.drawStr(0,128,"L");break;
-        case _RAISE:     u8g2.drawStr(0,128,"R");break;
-        case _ADJUST:     u8g2.drawStr(0,128,"A");break;
-        case _EXTRAL:     u8g2.drawStr(0,128,"EL");break;
-        case _EXTRAR:     u8g2.drawStr(0,128,"ER");break; 
-        case _MACROL:     u8g2.drawStr(0,128,"ML");break;
-        case _MACROR:     u8g2.drawStr(0,128,"MR");break; 
-        case _MACRO:     u8g2.drawStr(0,128,"M");break;    
+        case _L1:      u8g2.drawStr(0,128,"L");break;
+        case _L2:     u8g2.drawStr(0,128,"R");break;   
     }
     #endif
 }
