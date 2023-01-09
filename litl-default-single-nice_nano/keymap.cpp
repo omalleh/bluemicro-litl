@@ -59,6 +59,10 @@ void setupKeymap() {
   RotaryEncoder.begin(ENCODER_A_PIN, ENCODER_B_PIN);    // Initialize Encoder
   RotaryEncoder.setCallback(encoder_callback);    // Set callback
   RotaryEncoder.start();    // Start encoder
+ 
+ #ifdef BLUEMICRO_CONFIGURED_DISPLAY
+ OLED.setStatusDisplayCallback(updateDisplay);
+ #endif
 }
 
 
@@ -72,5 +76,7 @@ void encoder_callback(int step)
     KeyScanner::add_to_encoderKeys(KC_AUDIO_VOL_UP);
   }  
 }
+
+
 
 
