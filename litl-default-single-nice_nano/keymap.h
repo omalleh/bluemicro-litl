@@ -18,6 +18,7 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 
 */
 #include <stdint.h>
+#include "BlueMicro_display.h"
 #include "hid_keycodes.h"
 #include "keyboard_config.h"
 #include "advanced_keycodes.h"
@@ -36,8 +37,6 @@ void setupKeymap();
 void encoder_callback(int step);
 extern std::array<std::array<Key, MATRIX_COLS>, MATRIX_ROWS> matrix;
 extern DynamicState keyboardstate;
-
-#include "BlueMicro_display.h"
 
 #ifdef BLUEMICRO_CONFIGURED_DISPLAY
 extern BlueMicro_Display OLED;        // needed to assign the update display callback
