@@ -26,7 +26,27 @@ std::array<std::array<Key, MATRIX_COLS>, MATRIX_ROWS> matrix =
         KC_LSFT, KC_SLSH, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_RSFT,
         KC_LCTL, KC_LGUI, KC_LALT, KC_SPC,  LAYER_1, KC_SPC,  KC_RALT, KC_RGUI, KC_RCTL, KC_MPLY, KC_MUTE
      )};
- 
+
+void updateDisplay(PersistentState* cfg, DynamicState* stat)
+ {
+    #ifdef BLUEMICRO_CONFIGURED_DISPLAY
+    u8g2.setFontMode(1);  // Transparent
+    u8g2.setFontDirection(0);
+    battery(22,19,stat->vbat_per);
+    printline(0,28,stat->peer_name_prph);
+
+    char buffer [50];
+    u8g2.setFont(u8g2_font_helvB12_tf); // choose a suitable font
+
+    switch(stat->layer)
+    {
+        case _QWERTY:     u8g2.drawStr(0,128,""); break;
+        case _L1:      u8g2.drawStr(0,128,"L1");break;
+        case _R2:      u8g2.drawStr(0,128,"L2");break;
+    }
+    #endif
+ }
+
 void setupKeymap() {
 
     uint32_t layer1[MATRIX_ROWS][MATRIX_COLS] =
@@ -61,25 +81,7 @@ void setupKeymap() {
   RotaryEncoder.start();    // Start encoder
  
 // OLED Bits
- void updateDisplay(PersistentState* cfg, DynamicState* stat)
- {
-    #ifdef BLUEMICRO_CONFIGURED_DISPLAY
-    u8g2.setFontMode(1);  // Transparent
-    u8g2.setFontDirection(0);
-    battery(22,19,stat->vbat_per);
-    printline(0,28,stat->peer_name_prph);
-
-    char buffer [50];
-    u8g2.setFont(u8g2_font_helvB12_tf); // choose a suitable font
-
-    switch(stat->layer)
-    {
-        case _QWERTY:     u8g2.drawStr(0,128,""); break;
-        case _L1:      u8g2.drawStr(0,128,"L1");break;
-        case _R2:      u8g2.drawStr(0,128,"L2");break;
-    }
-    #endif
- }
+ 
  #ifdef BLUEMICRO_CONFIGURED_DISPLAY
  OLED.setStatusDisplayCallback(updateDisplay);
  #endif
