@@ -18,7 +18,6 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 
 */
 #include <stdint.h>
-#include "BlueMicro_display.h"
 #include "hid_keycodes.h"
 #include "keyboard_config.h"
 #include "advanced_keycodes.h"
@@ -28,39 +27,24 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 #ifndef KEYMAP_H
 #define KEYMAP_H
 
-#define _QWERTY 0
-#define _L1  1
-#define _L2  2
-
-
-void setupKeymap();
-void encoder_callback(int step);
-extern std::array<std::array<Key, MATRIX_COLS>, MATRIX_ROWS> matrix;
-extern DynamicState keyboardstate;
+#include "BlueMicro_display.h"
 
 #ifdef BLUEMICRO_CONFIGURED_DISPLAY
 extern BlueMicro_Display OLED;        // needed to assign the update display callback
 extern DISPLAY_U8G2_CONSTRUCTOR u8g2; // needed to call the display functions
 #endif
 
-void updateDisplay(PersistentState* cfg, DynamicState* stat)
-{
-    #ifdef BLUEMICRO_CONFIGURED_DISPLAY
-    u8g2.setFontMode(1);    // Transparent
-    u8g2.setFontDirection(0);
-    battery(22,19,stat->vbat_per);
-    printline(0,28,stat->peer_name_prph);
+#define _QWERTY 0
+#define _L1  1
+#define _L2  2
 
-    char buffer [50];
-    u8g2.setFont(u8g2_font_helvB12_tf); // choose a suitable font
-    switch(stat->layer)
-    {
-        case _QWERTY:     u8g2.drawStr(0,128,""); break;
-        case _L1:      u8g2.drawStr(0,128,"L");break;
-        case _L2:     u8g2.drawStr(0,128,"R");break;   
-    }
-    #endif
-}
+void setupKeymap();
+void encoder_callback(int step);
+extern std::array<std::array<Key, MATRIX_COLS>, MATRIX_ROWS> matrix;
+extern DynamicState keyboardstate;
+
+
+
 
 #endif /* KEYMAP_H */
 
