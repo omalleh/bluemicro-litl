@@ -60,6 +60,26 @@ void setupKeymap() {
   RotaryEncoder.setCallback(encoder_callback);    // Set callback
   RotaryEncoder.start();    // Start encoder
  
+// OLED Bits
+ void updateDisplay(PersistentState* cfg, DynamicState* stat)
+ {
+    #ifdef BLUEMICRO_CONFIGURED_DISPLAY
+    u8g2.setFontMode(1);  // Transparent
+    u8g2.setFontDirection(0);
+    battery(22,19,stat->vbat_per);
+    printline(0,28,stat->peer_name_prph);
+
+    char buffer [50];
+    u8g2.setFont(u8g2_font_helvB12_tf); // choose a suitable font
+
+    switch(stat->layer)
+    {
+        case _QWERTY:     u8g2.drawStr(0,128,""); break;
+        case _L1:      u8g2.drawStr(0,128,"L1");break;
+        case _R2:      u8g2.drawStr(0,128,"L2");break;
+    }
+    #endif
+ }
  #ifdef BLUEMICRO_CONFIGURED_DISPLAY
  OLED.setStatusDisplayCallback(updateDisplay);
  #endif
