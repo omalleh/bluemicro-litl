@@ -43,7 +43,7 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 
 #define I2C_SDA_PIN 17
 #define I2C_SCK_PIN 20
-#define DISPLAY_U8G2_CONSTRUCTOR U8G2_SSD1306_128X32_UNIVISION_F_HW_I2C // see https://github.com/olikraus/u8g2/wiki/u8g2setupcpp for reference
+#define DISPLAY_U8G2_CONSTRUCTOR U8G2_SSD1306_128X64_NONAME_1_HW_I2C // see https://github.com/olikraus/u8g2/wiki/u8g2setupcpp for reference
 
 #define ENCODER_A_PIN  6 
 #define ENCODER_B_PIN  8
