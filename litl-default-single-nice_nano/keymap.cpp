@@ -40,7 +40,7 @@ void updateDisplay(PersistentState* cfg, DynamicState* stat)
 
     switch(stat->layer)
     {
-        case _QWERTY:     u8g2.drawStr(0,128,""); break;
+        case _QWERTY:  u8g2.drawStr(0,128,""); break;
         case _L1:      u8g2.drawStr(0,128,"L1");break;
         case _L2:      u8g2.drawStr(0,128,"L2");break;
     }
