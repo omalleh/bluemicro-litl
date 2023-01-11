@@ -26,7 +26,27 @@ std::array<std::array<Key, MATRIX_COLS>, MATRIX_ROWS> matrix =
         KC_LSFT, KC_SLSH, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_RSFT,
         KC_LCTL, KC_LGUI, KC_LALT, KC_SPC,  LAYER_1, KC_SPC,  KC_RALT, KC_RGUI, KC_RCTL, KC_MPLY, KC_MUTE
      )};
- 
+
+void updateDisplay(PersistentState* cfg, DynamicState* stat)
+ {
+    #ifdef BLUEMICRO_CONFIGURED_DISPLAY
+    u8g2.setFontMode(1);  // Transparent
+    u8g2.setFontDirection(0);
+    battery(110,20,stat->vbat_per);
+    printline(0,10,stat->peer_name_prph);
+
+    char buffer [50];
+    u8g2.setFont(u8g2_font_helvB12_tf); // choose a suitable font
+
+    switch(stat->layer)
+    {
+        case _QWERTY:  u8g2.drawStr(0,32,"QWERTY"); break;
+        case _L1:      u8g2.drawStr(0,32,"NUMBERS");break;
+        case _L2:      u8g2.drawStr(0,32,"FUNCTION");break;
+    }
+    #endif
+ }
+
 void setupKeymap() {
 
     uint32_t layer1[MATRIX_ROWS][MATRIX_COLS] =
@@ -59,6 +79,12 @@ void setupKeymap() {
   RotaryEncoder.begin(ENCODER_A_PIN, ENCODER_B_PIN);    // Initialize Encoder
   RotaryEncoder.setCallback(encoder_callback);    // Set callback
   RotaryEncoder.start();    // Start encoder
+ 
+// OLED Bits
+ 
+ #ifdef BLUEMICRO_CONFIGURED_DISPLAY
+ OLED.setStatusDisplayCallback(updateDisplay);
+ #endif
 }
 
 
@@ -72,5 +98,7 @@ void encoder_callback(int step)
     KeyScanner::add_to_encoderKeys(KC_AUDIO_VOL_UP);
   }  
 }
+
+
 
 

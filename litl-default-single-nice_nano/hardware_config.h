@@ -32,15 +32,24 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 
 /* COL2ROW or ROW2COL */
 #define DIODE_DIRECTION ROW2COL
+
+/* Battery Monitoring */
 #define BATTERY_TYPE BATT_LIPO
 #define VBAT_PIN  4
-
 #define VCC_PIN 13
 #define VCC_POLARITY_ON 1
 
+/* LEDs */
 #define STATUS_BLE_LED_PIN  15  
 #define BLE_LED_ACTIVE 1
 
+/* OLED */
+#define I2C_SDA_PIN 17
+#define I2C_SCK_PIN 20
+#define DISPLAY_U8G2_CONSTRUCTOR U8G2_SSD1306_128X32_UNIVISION_F_HW_I2C // see https://github.com/olikraus/u8g2/wiki/u8g2setupcpp for reference
+#define DISPLAY_U8G2_ROTATION U8G2_R0
+
+/* Encoder */
 #define ENCODER_A_PIN  6 
 #define ENCODER_B_PIN  8
 #define ENCODER_RESOLUTION 2  
