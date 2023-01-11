@@ -27,6 +27,13 @@ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR P
 #ifndef KEYMAP_H
 #define KEYMAP_H
 
+#include "BlueMicro_display.h"
+
+#ifdef BLUEMICRO_CONFIGURED_DISPLAY
+extern BlueMicro_Display OLED;        // needed to assign the update display callback
+extern DISPLAY_U8G2_CONSTRUCTOR u8g2; // needed to call the display functions
+#endif
+
 #define _QWERTY 0
 #define _L1  1
 #define _L2  2
@@ -35,6 +42,9 @@ void setupKeymap();
 void encoder_callback(int step);
 extern std::array<std::array<Key, MATRIX_COLS>, MATRIX_ROWS> matrix;
 extern DynamicState keyboardstate;
+
+
+
 
 #endif /* KEYMAP_H */
 
