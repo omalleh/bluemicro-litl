@@ -32,17 +32,17 @@ void updateDisplay(PersistentState* cfg, DynamicState* stat)
     #ifdef BLUEMICRO_CONFIGURED_DISPLAY
     u8g2.setFontMode(1);  // Transparent
     u8g2.setFontDirection(0);
-    battery(22,19,stat->vbat_per);
-    printline(0,28,stat->peer_name_prph);
+    battery(22,110,stat->vbat_per);
+    printline(8,28,stat->peer_name_prph);
 
     char buffer [50];
     u8g2.setFont(u8g2_font_helvB12_tf); // choose a suitable font
 
     switch(stat->layer)
     {
-        case _QWERTY:  u8g2.drawStr(0,128,"QWERTY"); break;
-        case _L1:      u8g2.drawStr(0,128,"NUMBERS");break;
-        case _L2:      u8g2.drawStr(0,128,"FUNCTION");break;
+        case _QWERTY:  u8g2.drawStr(0,32,"QWERTY"); break;
+        case _L1:      u8g2.drawStr(0,32,"NUMBERS");break;
+        case _L2:      u8g2.drawStr(0,32,"FUNCTION");break;
     }
     #endif
  }
